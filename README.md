@@ -1,44 +1,77 @@
-# Ollama_Rag_chatbot
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAG Chain Question Answering</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Chain Question Answering</title>
 </head>
 <body>
+<h1>RAG Chain Question Answering</h1>
 
-  <h1>RAG Chain Question Answering</h1>
-  <p>Enter a URL and a query to get answers from the RAG chain.</p>
+<p>This project implements a Question Answering (QA) system using a Retriever-Augmenter-Generator (RAG) chain architecture. It leverages the power of Ollama's Llama3 large language model (LLM) to answer your questions based on information retrieved from webpages.</p>
 
-  <h2>Usage</h2>
-  <p>1. Enter a URL into the first input box.</p>
-  <p>2. Enter your query into the second input box.</p>
-  <p>3. Click on the "Submit" button to get the answer.</p>
+<h2>Features</h2>
 
-  <h2>Dependencies</h2>
-  <p>This application requires the following libraries:</p>
-  <ul>
-    <li>Gradio</li>
-    <li>Langchain</li>
-    <li>Ollama</li>
-  </ul>
+<ul>
+<li>Retrieves relevant information from webpages using document retrieval techniques.</li>
+<li>Generates answers using Ollama's pre-trained Llama3 LLM.</li>
+<li>Provides a user-friendly interface built with Gradio.</li>
+</ul>
 
-  <h2>How to Run</h2>
-  <p>1. Install the required dependencies:</p>
-  <pre><code>pip install gradio langchain ollama</code></pre>
-  <p>2. Run the application script:</p>
-  <pre><code>python your_script.py</code></pre>
+<h2>Getting Started</h2>
 
-  <h2>Example</h2>
-  <p>Here's how the application looks:</p>
-  <img src="screenshot.png" alt="Application Screenshot">
+<p>To use this application, you'll need to install the required dependencies first.</p>
 
-  <h2>Contributing</h2>
-  <p>Contributions are welcome! Feel free to submit pull requests.</p>
+<h3>Installation</h3>
 
-  <h2>License</h2>
-  <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<pre>pip install gradio langchain langchain-community ollama</pre>
+
+<h3>Running the application</h3>
+
+<pre>python app.py</pre>
+
+This will launch the Gradio interface in your web browser.
+
+<h2>Usage</h2>
+
+<ol>
+<li>Enter a URL in the first text box.</li>
+<li>Enter your question in the second text box.</li>
+<li>Click "Run" to get an answer based on the information retrieved from the webpage.</li>
+</ol>
+
+<h2>Technical Details</h2>
+
+<p>The code utilizes the following libraries:</p>
+
+<ul>
+<li>Gradio: for building the user interface.</li>
+<li>Langchain: for document loading and splitting.</li>
+<li>Langchain Community: for pre-trained vector store and embeddings.</li>
+<li>Ollama: for text generation with the Llama3 large language model.</li>
+</ul>
+
+<p>The application follows a RAG chain workflow:</p>
+
+<ul>
+<li>The load_and_retrieve_docs function retrieves relevant documents from the provided URL and creates a vector store for efficient information retrieval.</li>
+<li>The format_docs function formats retrieved documents for better readability.</li>
+<li>The rag_chain function defines the core RAG functionality. It retrieves relevant documents, formats the context with the question, and utilizes Ollama's Llama3 LLM to generate an answer based on the retrieved information and the user's question.</li>
+</ul>
+
+<h2>Further Enhancements</h2>
+
+<ul>
+<li>Implement error handling for invalid URLs or unsupported content types.</li>
+<li>Integrate additional pre-processing steps for improved document cleaning and text normalization.</li>
+<li>Explore different retrieval and generation models to potentially improve performance.</li>
+</ul>
+
+<h2>License</h2>
+
+<h2>Contributing</h2>
+
+We welcome contributions to this project. Please feel free to fork the repository and submit pull requests for any improvements or bug fixes.
 
 </body>
 </html>
