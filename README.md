@@ -30,7 +30,7 @@
 
 <pre>python app.py</pre>
 
-This will launch the Gradio interface in your web browser.
+This will launch the Gradio interface at web browser.
 
 <h2>Usage</h2>
 
